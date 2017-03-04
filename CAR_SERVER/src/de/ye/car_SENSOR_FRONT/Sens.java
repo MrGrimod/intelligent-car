@@ -93,7 +93,7 @@ public class Sens implements Runnable{
                 if(THREAD_SENS.I_S==true){
                 	if(THREAD_MODI.MODI.equalsIgnoreCase("s")){
                     	if(dist <=65){
-                        	//System.out.println("MOTOR-OFF");
+                    		//System.out.println("MOTOR-OFF");
                         	ENGINE.STOP();
                     		Thread.sleep(sens);
                     	} else {

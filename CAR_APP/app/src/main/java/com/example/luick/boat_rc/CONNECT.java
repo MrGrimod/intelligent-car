@@ -48,7 +48,7 @@ public class CONNECT implements Runnable {
 
     //Clients
     public static Socket client_led;
-    public static Socket client_eng;
+    public static  Socket client_eng;
     public static Socket client_dir;
     public static Socket client_sens;
     public static Socket client_modi;

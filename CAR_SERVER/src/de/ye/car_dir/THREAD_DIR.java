@@ -41,15 +41,15 @@ public class THREAD_DIR implements Runnable {
 					} else {
 						if(s.equalsIgnoreCase("left")){
 							SERVO.left();
-							System.out.println("left");
+							//System.out.println("left");
 						} else {
 							if(s.equalsIgnoreCase("right")){
 								SERVO.right();
-								System.out.println("right");
+								//System.out.println("right");
 							} else {
 								if(s.equalsIgnoreCase("middle")){
 									SERVO.middle();
-									System.out.println("middle");
+									//System.out.println("middle");
 								}
 							}
 						}

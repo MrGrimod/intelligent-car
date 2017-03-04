@@ -22,31 +22,22 @@ public class Main {
 	    	 LED.ALL_LED_OFF();
 	 		 executor = Executors.newFixedThreadPool(30);
 
-	 		 //Server for sending IP data 
 	 		 executor.execute(new SERVER_CON(8989));
 	 		 
-	 		 //Server for engine
 	 		 executor.execute(new SERVER_ENG(8888));
 	 		 
-	 		//Server for LED
 	 		 executor.execute(new SERVER_LED(8686));
 	 		 
-	 		//Server for direction
 	 		 executor.execute(new SERVER_DIR(8787));
 	 		 
-	 		//Server for sensor
 	 		 executor.execute(new SERVER_SENS(9898));
 	 		 
-	 		//Server for modi
 	 		 executor.execute(new SERVER_MODI(9999));
 	 		 
-	 		//Server for battery
 	 		 executor.execute(new SERVER_BAT(1111));
 	 		 
-	 		//Server for tracking
 	 		 executor.execute(new SERVER_TRACK(1212));
 	 		 
-	 		//Server for gps
 	 		 executor.execute(new SERVER_GPS(1313));
 	 		 
 	 		 

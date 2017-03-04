@@ -19,15 +19,15 @@ public class ENGINE {
 
 	
 	public static void FRONT() throws InterruptedException{
-		//System.out.println("FRONT");
+		System.out.println("FRONT");
             pin_ENG_1.high();
             pin_ENG_2.low();
 	}
 	
 	public static void BACK() throws InterruptedException{
-		//System.out.println("BACK");
-            pin_ENG_2.low();
-            pin_ENG_1.high();
+		System.out.println("BACK");
+            pin_ENG_2.high();
+            pin_ENG_1.low();
 	}
 	public static void setSpeed(int speed) throws InterruptedException{
 		//System.out.println("Speed:"+speed);

@@ -49,7 +49,7 @@ public class SERVO {
 		Gpio.wiringPiSetup();
 		SoftPwm.softPwmCreate(PIN, 0, 50);
 		
-		//1 = Links 
+		//1 = Links
 		//49 = Rechts
 		SoftPwm.softPwmWrite(PIN, 20);
 	}

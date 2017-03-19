@@ -21,14 +21,14 @@ public class ENGINE {
 
 	
 	public static void FRONT() throws InterruptedException{
-		System.out.println("FRONT");
+		//System.out.println("FRONT");
             pin_ENG_1.high();
             pin_ENG_2.low();
         FORWARD=true;
 	}
 	
 	public static void BACK() throws InterruptedException{
-		System.out.println("BACK");
+		//System.out.println("BACK");
             pin_ENG_2.high();
             pin_ENG_1.low();
         FORWARD=false;
@@ -36,9 +36,9 @@ public class ENGINE {
 	public static void setSpeed(int speed) throws InterruptedException{
 		//System.out.println("Speed:"+speed);
 		if(DR==true){
-		Gpio.wiringPiSetup();
-		SoftPwm.softPwmCreate(24, 0, 200);
-		SoftPwm.softPwmWrite(24, speed);
+			Gpio.wiringPiSetup();
+			SoftPwm.softPwmCreate(24, 0, 200);
+			SoftPwm.softPwmWrite(24, speed);
 		} else if(FORWARD){
 			Gpio.wiringPiSetup();
 			SoftPwm.softPwmCreate(24, 0, 200);

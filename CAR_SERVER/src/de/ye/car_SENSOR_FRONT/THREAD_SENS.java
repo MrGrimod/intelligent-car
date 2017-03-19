@@ -38,8 +38,10 @@ public class THREAD_SENS implements Runnable {
 			String s = null;
 			while((s = reader.readLine()) != null){
 				if(s.equalsIgnoreCase("ON")){
+					System.out.println("ON---");
 					I_S=true;
 				} else if(s.equalsIgnoreCase("OFF")){
+					System.out.println("OFF---");
 					I_S=false;
             		ENGINE.START();
 				}

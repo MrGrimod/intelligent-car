@@ -80,38 +80,38 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     CONNECT.writer_sens_front.flush();
                     Toast.makeText(getApplicationContext(), "Inelligent_ON", Toast.LENGTH_SHORT).show();
                 } else {
-                    CONNECT.writer_sens_front.println("OFF");
-                    CONNECT.writer_sens_front.flush();
-                    Toast.makeText(getApplicationContext(), "Inelligent_OFF", Toast.LENGTH_SHORT).show();
-                }
-
+                CONNECT.writer_sens_front.println("OFF");
+                CONNECT.writer_sens_front.flush();
+                Toast.makeText(getApplicationContext(), "Inelligent_OFF", Toast.LENGTH_SHORT).show();
             }
-        });
 
-        //Listener für switch Button
-        tr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        }
+    });
 
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+    //Listener für switch Button
+    tr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
-                if (isChecked) {
-                    CONNECT.writer_track.println("ON");
-                    CONNECT.writer_track.flush();
-                    Toast.makeText(getApplicationContext(), "TRACKING....", Toast.LENGTH_SHORT).show();
-                } else {
-                    CONNECT.writer_track.println("OFF");
-                    CONNECT.writer_track.flush();
-                    Toast.makeText(getApplicationContext(), "TRACKING_OFF", Toast.LENGTH_SHORT).show();
-                }
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
+            if (isChecked) {
+                CONNECT.writer_track.println("ON");
+                CONNECT.writer_track.flush();
+                Toast.makeText(getApplicationContext(), "TRACKING....", Toast.LENGTH_SHORT).show();
+            } else {
+                CONNECT.writer_track.println("OFF");
+                CONNECT.writer_track.flush();
+                Toast.makeText(getApplicationContext(), "TRACKING_OFF", Toast.LENGTH_SHORT).show();
             }
-        });
 
-        //Listener für switch Button
-        ra.setOnTouchListener(new View.OnTouchListener() {
+        }
+    });
 
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
+    //Listener für switch Button
+    ra.setOnTouchListener(new View.OnTouchListener() {
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
 
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
                     KIPP = true;
@@ -252,11 +252,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     } else {
                         if (send_eng < -75) {
                             CONNECT.writer_eng.println("B");
-                            CONNECT.writer_eng.println("70");
+                            //Speed slow
+                            CONNECT.writer_eng.println("100");
                             CONNECT.writer_eng.flush();
                         } else if (send_eng > 75) {
                             CONNECT.writer_eng.println("F");
-                            CONNECT.writer_eng.println("70");
+                            //Speed slow
+                            CONNECT.writer_eng.println("100");
                             CONNECT.writer_eng.flush();
 
                         }
@@ -269,11 +271,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     } else {
                         if (send_eng < -75) {
                             CONNECT.writer_eng.println("B");
-                            CONNECT.writer_eng.println("70");
+                            //Speed fast
+                            CONNECT.writer_eng.println("100");
                             CONNECT.writer_eng.flush();
                         } else if (send_eng > 75) {
                             CONNECT.writer_eng.println("F");
-                            CONNECT.writer_eng.println("80");
+                            //Speed fast
+                            CONNECT.writer_eng.println("110");
                             CONNECT.writer_eng.flush();
 
                         }
@@ -281,17 +285,22 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
                 } else if (MODE == "uf") {
 
+
+
+
                     if (send_eng < 75 && send_eng > -75) {
                         CONNECT.writer_eng.println("0");
                         CONNECT.writer_eng.flush();
                     } else {
                         if (send_eng < -75) {
                             CONNECT.writer_eng.println("B");
+                            //Speed u fast
                             CONNECT.writer_eng.println("0");
                             CONNECT.writer_eng.flush();
                         } else if (send_eng > 75) {
                             CONNECT.writer_eng.println("F");
-                            CONNECT.writer_eng.println("110");
+                            //Speed u fast
+                            CONNECT.writer_eng.println("130");
                             CONNECT.writer_eng.flush();
 
                         }

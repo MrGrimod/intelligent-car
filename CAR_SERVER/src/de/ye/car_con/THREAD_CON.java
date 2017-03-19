@@ -37,7 +37,7 @@ public class THREAD_CON implements Runnable {
 			//-------------
 			System.out.println("STATUS CLIENT STREAM THREAD STARTED._CON");
 			String s = null;
-			
+
 			while(t=true){
 				TRACK_IP=reader.readLine();
 					try{
@@ -46,9 +46,37 @@ public class THREAD_CON implements Runnable {
 				    		//"192.168.42.15"
 							LED.LED_on_FINE();
 				    	} else {
-				    		//System.out.println("STOP");
-                    		ENGINE.STOP();
-							LED.LED_off_FINE();
+    							if(InetAddress.getByName(TRACK_IP).isReachable(80)){
+    								LED.LED_on_FINE();
+    					    	} else {
+    					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
+        								LED.LED_on_FINE();
+        					    	} else {
+        					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
+            								LED.LED_on_FINE();
+            					    	} else {
+            					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
+                								LED.LED_on_FINE();
+                					    	} else {
+                					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
+                    								LED.LED_on_FINE();
+                    					    	} else {
+                    					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
+                        								LED.LED_on_FINE();
+                        					    	} else {
+                        					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
+                        								LED.LED_on_FINE();
+	                        					    	} else {
+	                        					    			System.out.println("STOP >> REASON NO_CONNECTION");
+	                        		                    		ENGINE.STOP();
+	                        	    							LED.LED_off_FINE();
+	                        					    	}
+                        					    	}
+                    					    	}
+                					    	}
+            					    	}
+        					    	}
+    					    	}
 				    	}
 					} catch (Exception e){
 				}

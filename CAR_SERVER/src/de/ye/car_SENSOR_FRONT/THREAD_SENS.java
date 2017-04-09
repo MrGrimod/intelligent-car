@@ -15,7 +15,8 @@ public class THREAD_SENS implements Runnable {
 	public static Socket client;
 	public static PrintWriter writer;
 	public static OutputStream out;
-	public static boolean I_S=false;
+	public static boolean I_S_FRONT=false;
+	public static boolean I_S_SIDE=false;
 	
 	public THREAD_SENS(Socket client) {
 		this.client = client;
@@ -31,19 +32,38 @@ public class THREAD_SENS implements Runnable {
 			InputStream in = client.getInputStream();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 			//-------------
-	 		 Thread tttt = new Thread(new Sens());
-	 		 tttt.start();
 			
+			//////////////
+	 		Thread SENS_FRONT_MIDDLE = new Thread(new SENS_FRONT_MIDDLE());
+	 		SENS_FRONT_MIDDLE.start();
+	 		
+
+	 		Thread SENS_FRONT_RIGHT = new Thread(new SENS_FRONT_RIGHT());
+	 		SENS_FRONT_RIGHT.start();
+	 		
+	 		Thread SENS_FRONT_LEFT = new Thread(new SENS_FRONT_LEFT());
+	 		SENS_FRONT_LEFT.start();
+
+	 		//Thread SENS_FRONT_MIDDLE_RIGHT = new Thread(new SENS_FRONT_MIDDLE_RIGHT());
+	 		//SENS_FRONT_MIDDLE_RIGHT.start();
+
+	 		Thread SENS_FRONT_MIDDLE_LEFT = new Thread(new SENS_FRONT_MIDDLE_LEFT());
+	 		SENS_FRONT_MIDDLE_LEFT.start();
+
+	 		//////////////
 			System.out.println("STATUS CLIENT STREAM THREAD STARTED._SENS_FRONT");
 			String s = null;
 			while((s = reader.readLine()) != null){
-				if(s.equalsIgnoreCase("ON")){
-					System.out.println("ON---");
-					I_S=true;
-				} else if(s.equalsIgnoreCase("OFF")){
-					System.out.println("OFF---");
-					I_S=false;
+				if(s.equalsIgnoreCase("ON_FRONT")){
+					I_S_FRONT=true;
+				} else if(s.equalsIgnoreCase("OFF_FRONT")){
+					I_S_FRONT=false;
             		ENGINE.START();
+				}
+				if(s.equalsIgnoreCase("ON_SIDE")){
+					I_S_SIDE=true;
+				} else if(s.equalsIgnoreCase("OFF_SIDE")){
+					I_S_SIDE=false;
 				}
 			}
 			System.out.println("STATUS CLIENT LISTENING READY._SENS_FRONT");

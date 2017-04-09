@@ -5,12 +5,12 @@ android {
         config {
             keyAlias 'MrGrimod'
             keyPassword 'googel'
-            storeFile file('C:/Users/gelbe/Documents/CAR_RC/intcar.jks')
+            storeFile file('C:/Users/MrGrimod/Documents/CAR/CAR_APP/int_car.jks')
             storePassword 'googel'
         }
     }
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.example.luick.boat_rc"
         minSdkVersion 19
@@ -38,7 +38,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.1'
-    compile project(':jsch')
     compile 'com.google.android.gms:play-services:9.6.1'
     compile 'com.android.support:multidex:1.0.0'
 }

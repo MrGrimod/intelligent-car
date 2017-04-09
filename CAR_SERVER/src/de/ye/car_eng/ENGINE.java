@@ -16,20 +16,20 @@ public class ENGINE {
 	
 	static GpioController gpio = GpioFactory.getInstance();
 	static GpioPinDigitalOutput pin_ENG_1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_22, "ENG_DIR_1", PinState.HIGH);    
-	static GpioPinDigitalOutput pin_ENG_2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_21, "ENG_DIR_2", PinState.LOW);    
+	//static GpioPinDigitalOutput pin_ENG_2 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_21, "ENG_DIR_2", PinState.LOW);    
 	
 
 	
 	public static void FRONT() throws InterruptedException{
 		//System.out.println("FRONT");
             pin_ENG_1.high();
-            pin_ENG_2.low();
+            //pin_ENG_2.low();
         FORWARD=true;
 	}
 	
 	public static void BACK() throws InterruptedException{
 		//System.out.println("BACK");
-            pin_ENG_2.high();
+		//pin_ENG_2.high();
             pin_ENG_1.low();
         FORWARD=false;
 	}

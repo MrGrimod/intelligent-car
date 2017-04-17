@@ -26,7 +26,9 @@ Hardware/ Sensors, Motor Driver, Servo, Voltage regulator
 
 Required software 
 -------------
-To run CAR_SERVER.jar on the Raspberry you need to install [wiringPi](https://github.com/WiringPi/WiringPi). You also need to install Java.
+To run CAR_SERVER.jar on the Raspberry you need to install [wiringPi](https://github.com/WiringPi/WiringPi). 
+You also need to install Java.
+
 Programming IDS?
 -------------
 > - For the app i am using [Android Studio](https://developer.android.com/studio/index.html).

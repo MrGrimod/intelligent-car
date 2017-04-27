@@ -73,7 +73,7 @@ public class SERVO {
 		if(isInUse){
 			
 		} else {
-			SoftPwm.softPwmWrite(PIN, 15);
+			SoftPwm.softPwmWrite(PIN, 16);
 		}
 		
 	}

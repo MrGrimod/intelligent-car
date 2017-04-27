@@ -49,7 +49,6 @@ public class SENS_FRONT_LEFT implements Runnable{
             this.trigPin.low();
         } catch (InterruptedException ex) {
         	//dist=5;
-            System.err.println( "" );
         }
     }
     
@@ -62,7 +61,6 @@ public class SENS_FRONT_LEFT implements Runnable{
         
         if( countdown <= 0 ) {
         	//dist=5;
-            throw new TimeoutException( "" );
         }
     }
     
@@ -76,7 +74,6 @@ public class SENS_FRONT_LEFT implements Runnable{
         
         if( countdown <= 0 ) {
         	//dist=5;
-            throw new TimeoutException("");
         }
         
         return (long)Math.ceil( ( end - start ) / 1000.0 );  
@@ -93,10 +90,10 @@ public class SENS_FRONT_LEFT implements Runnable{
             try {
             	Thread.sleep(CONFIG.LATENCY_SIDE);
             	dist = Math.round(this.measureDistance());
-            	//System.out.println("LEFT: "+dist);
+            	//System.out.println("LEFT: " + dist);
                 if(THREAD_SENS.I_S_SIDE==true){
                     	if(dist <=CONFIG.LIFT_SIDE){
-                    		System.out.println("RIGHT");
+                    		System.out.println("LEFT_triggered: " + dist);
                     		SERVO.right_OVERRIDE();
                     	} else {
                     		SERVO.isInUse=false;

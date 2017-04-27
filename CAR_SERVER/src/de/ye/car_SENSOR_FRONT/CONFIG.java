@@ -10,7 +10,7 @@ public class CONFIG {
 	
 
 	//Reaction limits -> FAST
-	public static int F_R_DIST=90;
+	public static int F_R_DIST=120;
 	
 	//Reaction limits -> ULTRA_FAST
 	public static int UF_R_DIST=150;

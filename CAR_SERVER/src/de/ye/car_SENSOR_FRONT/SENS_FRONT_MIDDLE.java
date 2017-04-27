@@ -47,7 +47,6 @@ public class SENS_FRONT_MIDDLE implements Runnable{
             this.trigPin.low();
         } catch (InterruptedException ex) {
         	//dist=5;
-            System.err.println( "" );
         }
     }
     
@@ -60,7 +59,6 @@ public class SENS_FRONT_MIDDLE implements Runnable{
         
         if( countdown <= 0 ) {
         	//dist=5;
-            throw new TimeoutException( "" );
         }
     }
     
@@ -74,7 +72,6 @@ public class SENS_FRONT_MIDDLE implements Runnable{
         
         if( countdown <= 0 ) {
         	//dist=5;
-            throw new TimeoutException("");
         }
         
         return (long)Math.ceil( ( end - start ) / 1000.0 );  

@@ -27,10 +27,13 @@ public class tr implements Runnable{
 								SERVO.middle();
 					    } else if(line.equalsIgnoreCase("down_M")){
 								ENGINE.FRONT();
-								ENGINE.setSpeed(50);
+								ENGINE.setSpeed(100);
 					    } else if(line.equalsIgnoreCase("top_M")){
 								ENGINE.FRONT();
 								ENGINE.setSpeed(0);
+					    } else if(line.equalsIgnoreCase("midlle_M")) {
+							ENGINE.FRONT();
+							ENGINE.setSpeed(0);
 					    }
 					 }
 				} catch (InterruptedException e) {

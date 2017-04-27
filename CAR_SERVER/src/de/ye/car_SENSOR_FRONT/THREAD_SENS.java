@@ -36,6 +36,13 @@ public class THREAD_SENS implements Runnable {
 			//////////////
 	 		Thread SENS_FRONT_MIDDLE = new Thread(new SENS_FRONT_MIDDLE());
 	 		SENS_FRONT_MIDDLE.start();
+
+	 		Thread SENS_FRONT_MIDDLE_RIGHT = new Thread(new SENS_FRONT_MIDDLE_RIGHT());
+	 		SENS_FRONT_MIDDLE_RIGHT.start();
+
+	 		Thread SENS_FRONT_MIDDLE_LEFT = new Thread(new SENS_FRONT_MIDDLE_LEFT());
+	 		SENS_FRONT_MIDDLE_LEFT.start();
+
 	 		
 
 	 		Thread SENS_FRONT_RIGHT = new Thread(new SENS_FRONT_RIGHT());
@@ -43,13 +50,6 @@ public class THREAD_SENS implements Runnable {
 	 		
 	 		Thread SENS_FRONT_LEFT = new Thread(new SENS_FRONT_LEFT());
 	 		SENS_FRONT_LEFT.start();
-
-	 		//Thread SENS_FRONT_MIDDLE_RIGHT = new Thread(new SENS_FRONT_MIDDLE_RIGHT());
-	 		//SENS_FRONT_MIDDLE_RIGHT.start();
-
-	 		Thread SENS_FRONT_MIDDLE_LEFT = new Thread(new SENS_FRONT_MIDDLE_LEFT());
-	 		SENS_FRONT_MIDDLE_LEFT.start();
-
 	 		//////////////
 			System.out.println("STATUS CLIENT STREAM THREAD STARTED._SENS_FRONT");
 			String s = null;

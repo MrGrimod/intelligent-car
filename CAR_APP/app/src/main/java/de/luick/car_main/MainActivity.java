@@ -277,12 +277,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         if (send_eng < -75) {
                             CONNECT.writer_eng.println("B");
                             //Speed slow
-                            CONNECT.writer_eng.println("100");
+                            CONNECT.writer_eng.println("130");
                             CONNECT.writer_eng.flush();
                         } else if (send_eng > 75) {
                             CONNECT.writer_eng.println("F");
                             //Speed slow
-                            CONNECT.writer_eng.println("100");
+                            CONNECT.writer_eng.println("130");
                             CONNECT.writer_eng.flush();
 
                         }
@@ -296,12 +296,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         if (send_eng < -75) {
                             CONNECT.writer_eng.println("B");
                             //Speed fast
-                            CONNECT.writer_eng.println("100");
+                            CONNECT.writer_eng.println("130");
                             CONNECT.writer_eng.flush();
                         } else if (send_eng > 75) {
                             CONNECT.writer_eng.println("F");
                             //Speed fast
-                            CONNECT.writer_eng.println("110");
+                            CONNECT.writer_eng.println("170");
                             CONNECT.writer_eng.flush();
 
                         }
@@ -324,7 +324,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         } else if (send_eng > 75) {
                             CONNECT.writer_eng.println("F");
                             //Speed u fast
-                            CONNECT.writer_eng.println("130");
+                            CONNECT.writer_eng.println("180");
                             CONNECT.writer_eng.flush();
 
                         }

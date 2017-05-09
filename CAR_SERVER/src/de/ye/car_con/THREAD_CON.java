@@ -41,44 +41,15 @@ public class THREAD_CON implements Runnable {
 			while(t=true){
 				TRACK_IP=reader.readLine();
 					try{
-				    	if(InetAddress.getByName(TRACK_IP).isReachable(80)){
-							//System.out.println("OK");
-				    		//"192.168.42.15"
+				    	if(!InetAddress.getByName(TRACK_IP).isReachable(80) && InetAddress.getByName(TRACK_IP).isReachable(80) && InetAddress.getByName(TRACK_IP).isReachable(80) && InetAddress.getByName(TRACK_IP).isReachable(80) && InetAddress.getByName(TRACK_IP).isReachable(80) && InetAddress.getByName(TRACK_IP).isReachable(80) && InetAddress.getByName(TRACK_IP).isReachable(80) && InetAddress.getByName(TRACK_IP).isReachable(80) ){
+	                        System.out.println("STOP >> REASON NO_CONNECTION");
+	                        ENGINE.STOP();
+	                        LED.LED_off_FINE();
+    					} else {
 							LED.LED_on_FINE();
-				    	} else {
-    							if(InetAddress.getByName(TRACK_IP).isReachable(80)){
-    								LED.LED_on_FINE();
-    					    	} else {
-    					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
-        								LED.LED_on_FINE();
-        					    	} else {
-        					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
-            								LED.LED_on_FINE();
-            					    	} else {
-            					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
-                								LED.LED_on_FINE();
-                					    	} else {
-                					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
-                    								LED.LED_on_FINE();
-                    					    	} else {
-                    					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
-                        								LED.LED_on_FINE();
-                        					    	} else {
-                        					    		if(InetAddress.getByName(TRACK_IP).isReachable(80)){
-                        								LED.LED_on_FINE();
-	                        					    	} else {
-	                        					    			System.out.println("STOP >> REASON NO_CONNECTION");
-	                        		                    		ENGINE.STOP();
-	                        	    							LED.LED_off_FINE();
-	                        					    	}
-                        					    	}
-                    					    	}
-                					    	}
-            					    	}
-        					    	}
-    					    	}
-				    	}
+    					}
 					} catch (Exception e){
+						e.printStackTrace();
 				}
 			}
 			

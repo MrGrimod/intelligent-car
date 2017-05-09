@@ -4,7 +4,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import de.ye.car_SENSOR_FRONT.SERVER_SENS;
-import de.ye.car_batt.SERVER_BAT;
 import de.ye.car_con.SERVER_CON;
 import de.ye.car_dir.SERVER_DIR;
 import de.ye.car_eng.SERVER_ENG;
@@ -12,7 +11,6 @@ import de.ye.car_led.LED;
 import de.ye.car_led.SERVER_LED;
 import de.ye.car_modi.SERVER_MODI;
 import de.ye.car_track.SERVER_TRACK;
-import de.ye_car_gps.SERVER_GPS;
 
 public class Main {
 	
@@ -34,11 +32,7 @@ public class Main {
 	 		 
 	 		 executor.execute(new SERVER_MODI(9999));
 	 		 
-	 		 executor.execute(new SERVER_BAT(1111));
-	 		 
 	 		 executor.execute(new SERVER_TRACK(1212));
-	 		 
-	 		 executor.execute(new SERVER_GPS(1313));
 	 		 
 	 		 
 	 		 

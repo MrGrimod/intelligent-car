@@ -18,7 +18,6 @@ public class tr implements Runnable{
 			 String line = null;
 				try {
 			    	while ((line = reader.readLine()) != null) {
-			    		//System.out.println(line);
 			    		if(line.equalsIgnoreCase("right")){
 								SERVO.right();
 					    } else if(line.equalsIgnoreCase("left")){

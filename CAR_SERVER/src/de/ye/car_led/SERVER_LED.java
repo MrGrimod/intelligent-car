@@ -15,24 +15,11 @@ public class SERVER_LED implements Runnable {
 	public static ServerSocket server;
 	public static int PORT = 8686;
 	public static ExecutorService executor;
-	public static Socket client;
 	 
 	public SERVER_LED(int PORT){
 		this.PORT = PORT;
 	}
 	
-	
-	public static boolean isAlive(){
-		Socket test;
-		try {
-			test = new Socket("",PORT);
-			if(test.isConnected()){
-			}
-		} catch (IOException e) {
-			return false;
-		}
-		return true;
-	}
 	public static void sendToAllClients(String message) {
         Iterator it = list_clientWriter.iterator();
        
@@ -43,23 +30,22 @@ public class SERVER_LED implements Runnable {
         }
 	}
 
-
 	@Override
 	public void run() {
 		executor = Executors.newFixedThreadPool(30);
         list_clientWriter = new ArrayList<PrintWriter>();
-	
 		try {
 			server = new ServerSocket(PORT);
 			System.out.println("Server gestartet!_LED");
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.err.println("Server konnte nicht gestartet werden!_LED");
+			LED.LED_on_ERR();
 		}
 		System.out.println("LISTEN_LED");
 		while((true)){
 			try {
-				client = server.accept();
+				Socket client = server.accept();
 				if(client.isConnected()){
 					System.out.println("Client Connected._LED");
 					LED.LED_on_FINE();

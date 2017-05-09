@@ -21,21 +21,8 @@ public class SERVER_TRACK implements Runnable {
 	 
 	public SERVER_TRACK(int PORT){
 		this.PORT = PORT;
-	
 	}
 	
-	
-	public static boolean isAlive(){
-		Socket test;
-		try {
-			test = new Socket("",PORT);
-			if(test.isConnected()){
-			}
-		} catch (IOException e) {
-			return false;
-		}
-		return true;
-	}
 	public static void sendToAllClients(String message) {
         Iterator it = list_clientWriter.iterator();
        
@@ -45,7 +32,6 @@ public class SERVER_TRACK implements Runnable {
                 writer.flush();
         }
 	}
-
 
 	@Override
 	public void run() {
